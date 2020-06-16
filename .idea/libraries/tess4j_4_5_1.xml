@@ -4,12 +4,9 @@
       <root url="jar://$PROJECT_DIR$/../../../../temp/tess4j/tess4j-4.5.1.jar!/" />
       <root url="jar://$PROJECT_DIR$/../../../../temp/tess4j/ghost4j-1.0.1.jar!/" />
       <root url="jar://$PROJECT_DIR$/../../../../temp/tess4j/fontbox-2.0.18.jar!/" />
-      <root url="jar://$PROJECT_DIR$/../../../../temp/tess4j/slf4j-api-1.7.25.jar!/" />
       <root url="jar://$PROJECT_DIR$/../../../../temp/tess4j/commons-logging-1.2.jar!/" />
       <root url="jar://$PROJECT_DIR$/../../../../temp/tess4j/itext-2.1.7.jar!/" />
-      <root url="jar://$PROJECT_DIR$/../../../../temp/tess4j/logback-core-1.2.3.jar!/" />
       <root url="jar://$PROJECT_DIR$/../../../../temp/tess4j/jboss-logging-3.1.4.GA.jar!/" />
-      <root url="jar://$PROJECT_DIR$/../../../../temp/tess4j/log4j-over-slf4j-1.7.30.jar!/" />
       <root url="jar://$PROJECT_DIR$/../../../../temp/tess4j/jul-to-slf4j-1.7.30.jar!/" />
       <root url="jar://$PROJECT_DIR$/../../../../temp/tess4j/logback-classic-1.2.3.jar!/" />
       <root url="jar://$PROJECT_DIR$/../../../../temp/tess4j/commons-collections-3.2.1.jar!/" />

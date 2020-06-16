@@ -15,6 +15,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Objects;
 
 @Controller
 public class FileUploadController {
@@ -29,12 +30,14 @@ public class FileUploadController {
                                          RedirectAttributes redirectAttributes, Model model) throws IOException, TesseractException {
 
         byte[] bytes = file.getBytes();
-        Path path = Paths.get("C://Users//gnee//IdeaProjects//TestTesseract//src//main//resources//static//" + file.getOriginalFilename());
+        Path path = Paths.get(Objects.requireNonNull(file.getOriginalFilename()));
         Files.write(path, bytes);
+
 
         File convertedFile = convert(file);
         Tesseract tesseract = new Tesseract();
-        tesseract.setDatapath("C://temp//tess4j//tessdata");
+        tesseract.setDatapath("tessdata");
+        tesseract.setTessVariable("user_defined_dpi", "300");
         //tesseract.setLanguage("rus");
         String text = tesseract.doOCR(convertedFile);
         redirectAttributes.addFlashAttribute("file", file);
@@ -48,11 +51,15 @@ public class FileUploadController {
     }
 
     public static File convert(MultipartFile file) throws IOException {
-        File convertedFile = new File(file.getOriginalFilename());
-        convertedFile.createNewFile();
-        FileOutputStream fos = new FileOutputStream(convertedFile);
-        fos.write(file.getBytes());
-        fos.close();
+        File convertedFile = new File(Objects.requireNonNull(file.getOriginalFilename()));
+        //File tiff = PdfUtilities.convertPdf2Tiff(convertedFile);
+        //tiff.createNewFile();
+
+        if (convertedFile.createNewFile()) {
+            FileOutputStream fos = new FileOutputStream(convertedFile);
+            fos.write(file.getBytes());
+            fos.close();
+        }
         return convertedFile;
     }
 
