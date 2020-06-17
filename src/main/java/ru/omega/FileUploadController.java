@@ -52,8 +52,6 @@ public class FileUploadController {
 
     public static File convert(MultipartFile file) throws IOException {
         File convertedFile = new File(Objects.requireNonNull(file.getOriginalFilename()));
-        //File tiff = PdfUtilities.convertPdf2Tiff(convertedFile);
-        //tiff.createNewFile();
 
         if (convertedFile.createNewFile()) {
             FileOutputStream fos = new FileOutputStream(convertedFile);
